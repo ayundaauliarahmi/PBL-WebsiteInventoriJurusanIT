@@ -61,27 +61,27 @@ switch ($aksi) {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php
+                                <?php
                                     // Cek peran pengguna yang login
-                                    if ($_SESSION['level'] == 'mahasiswa') {
+                                    $username = $_SESSION['username']; // Mendapatkan username yang login
+                                    $userLevel = $_SESSION['level']; // Mendapatkan level pengguna yang login
+
+                                    // Query untuk mengambil data
+                                    if ($userLevel === 'admin') {
+                                        // Jika pengguna adalah admin, mereka dapat melihat semua data
                                         $query = "SELECT * FROM pinjaman 
                                             INNER JOIN barang ON pinjaman.kode_brg = barang.kode_brg 
                                             INNER JOIN user ON pinjaman.nama = user.nama
-                                            WHERE user.level = 'mahasiswa'
                                             ORDER BY pinjaman.tgl_peminjaman";
-                                    } elseif ($_SESSION['level'] == 'dosen') {
+                                    } else {
+                                        // Jika pengguna bukan admin, mereka hanya dapat melihat data sesuai dengan username mereka
                                         $query = "SELECT * FROM pinjaman 
                                             INNER JOIN barang ON pinjaman.kode_brg = barang.kode_brg 
                                             INNER JOIN user ON pinjaman.nama = user.nama
-                                            WHERE user.level = 'dosen'
-                                            ORDER BY pinjaman.tgl_peminjaman";
-                                    } elseif ($_SESSION['level'] == 'admin') {
-                                        $query = "SELECT * FROM pinjaman 
-                                            INNER JOIN barang ON pinjaman.kode_brg = barang.kode_brg 
-                                            INNER JOIN user ON pinjaman.nama = user.nama
+                                            WHERE user.username = '$username'
                                             ORDER BY pinjaman.tgl_peminjaman";
                                     }
-
+                                    
                                     $result = $db->query($query);
 
                                     $nomor = 1;

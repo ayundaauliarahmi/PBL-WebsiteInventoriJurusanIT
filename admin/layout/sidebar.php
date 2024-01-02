@@ -69,7 +69,7 @@
       }
       ?>
       <li class="nav-item">
-        <a href="../Login/logout.php" class="nav-link" onclick="return confirm('Yakin ingin keluar?')">
+        <a href="../login/logout.php" class="nav-link" onclick="return confirm('Yakin ingin keluar?')">
           <i class="nav-icon fas fa-right-from-bracket"></i>
           <p>Log out</p>
         </a>

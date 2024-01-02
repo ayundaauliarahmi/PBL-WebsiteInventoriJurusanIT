@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }else {
         $query = "INSERT INTO user (username, nama, password, level) VALUES ('$username', '$nama', '$password', '$level')";
         if ($db->query($query) === TRUE) {
-            header("Location: login.php"); //redirect
+            header("Location: ../login.php"); //redirect
             exit;
         } else {
             echo "Error: " . $query . "<br>" . $db->error;
@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                       <label for="username">Username:</label>
                       <input type="number" class="form-control" name="username" id="username" required>
                     </div>
-                    <!-- <small class="d-block text-center mt-3">Do you have an account? <a href="login.php">* Username harus berupa NIM atau NIP</a></small> -->
+                    <!-- <small class="d-block text-center mt-3">Do you have an account? <a href="../login.php">* Username harus berupa NIM atau NIP</a></small> -->
                     <small class="d-block text-end mb-3 fw-bold" style="color: #9E9FA5;">* Username harus berupa NIM atau NIP</small>
                     <div class="form-group last mb-4">
                       <label for="password">Password:</label>
@@ -91,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <div class="d-flex align-items-center">
                         <button type="submit" class="btn btn-block btn-warning">Create an Account</button>
                     </div>
-                    <small class="d-block text-center mt-3">Do you have an account? <a href="login.php">Log in Now!</a></small>
+                    <small class="d-block text-center mt-3">Do you have an account? <a href="../login.php">Log in Now!</a></small>
                 </form>
             </div>
           </div>
