@@ -29,12 +29,6 @@ include '../koneksi.php';
 
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
-    <!-- <a class="brand-link text-center">
-      <!-- <img src="../assets/img/ti.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> -->
-      <!-- <span class="brand-text font-weight-light">TEKNOLOGI INFORMASI</span>
-    </a> --> 
-
     <!-- Sidebar -->
    <?php 
       include 'layout/sidebar.php';
@@ -85,9 +79,9 @@ include '../koneksi.php';
   new DataTable('#example');
 </script>
 <!-- jQuery -->
-<!-- <script src="../app/plugins/jquery/jquery.min.js"></script> -->
+<script src="../app/plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
-<!-- <script src="../app/plugins/jquery-ui/jquery-ui.min.js"></script> -->
+<script src="../app/plugins/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button)
@@ -130,22 +124,5 @@ include '../koneksi.php';
 <script src="../app/plugins/pdfmake/vfs_fonts.js"></script>
 <script src="../app/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="../app/plugins/datatables-buttons/js/buttons.print.min.js"></script>
-<script>
-  $(function () {
-    $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["excel", "pdf", "print"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });
-  });
-</script>
 </body>
 </html>
